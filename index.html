@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Video Object Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #2c2c2c;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        .header {
+            width: 100%;
+            max-width: 1024px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(22, 31, 53, 0.97);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 70px;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #f2f2f2;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            border: 2px solid rgba(22, 31, 53, 0.97);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 70%;
+            max-width: 1024px;
+        }
+        #video, #thumbnail, canvas {
+            width: 100%;
+            height: 500px;
+            display: block;
+            border-bottom: 2px solid #007BFF;
+        }
+        #thumbnail {
+            display: none;
+        }
+        canvas {
+            display: none;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .controls input[type="file"] {
+            display: none;
+        }
+        .controls label {
+            padding: 10px 20px;
+            background-color: rgba(22, 31, 53, 0.97);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .controls label:hover {
+            background-color: #0056b3;
+        }
+        .controls button {
+            padding: 10px 20px;
+            background-color:rgba(22, 31, 53, 0.97);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Raleway', sans-serif;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+        .controls button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+
+
+        .recommendations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            width: 70%;
+            max-width: 1024px;
+        }
+        .card {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 150px;
+            height: 100px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .card-content {
+            padding: 10px;
+        }
+
+        .card-content h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #cccccc;
+            margin: 0;
+        }
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #5b226d;
+
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(22, 31, 53, 0.97);
+    position: fixed;
+    top: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+    width: 100%;
+  
+margin-bottom: 100px;
+margin-top: 0px;
+
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+.navbar a:hover {
+    color: #00a8e1;
+    text-decoration: none;
+    border-bottom: #00a8e1 solid;
+    padding-bottom: 2px;
+}
+
+.navbar .sign-in {
+    margin-left: auto;
+}
+
+.navbar img {
+    float: right;
+    margin-right: 20px;
+    width: 100px; 
+    height: auto; 
+    margin-top: 5px;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #232F3E;
+    color: white;
+    padding: 40px 20px;
+    font-size: 14px;
+    margin-top: 60px;
+    width:100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icon {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #00A8E1;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #37475A;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.raleway-light {
+            font-weight: 100;
+        }
+        .raleway-regular {
+            font-weight: 400;
+        }
+        .raleway-bold {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#free">Free to me</a>
+        <a href="#store">Store</a>
+        <a href="#channels">Channels</a>
+        <a href="#categories">Categories</a>
+        <a href="#mystuff">My Stuff</a>
+        <a href="#kids">Kids</a>
+        <a href="#news" class="sign-in">Sign In</a>
+        <img src="primelogo.png" >
+    </div>
+    <div class="header">
+        <img src="PRIME VISION.png" alt="Logo">
+        <h1 class="raleway-bold">Video Object Detection</h1>
+    </div>
+    <div class="container">
+        <canvas>
+        <video id="video" controls muted></video>
+    </canvas>
+    </div>
+    <div class="controls">
+        <label for="upload">Upload Video</label>
+        <input type="file" id="upload" accept="video/*">
+        <button id="play" style="display:none;">Play</button>
+        <button id="pause" style="display:none;">Pause</button>
+    </div>
+    <div class="recommendations">
+        <div class="card" data-video="phone.mp4">
+            <img src="phone.webp" alt="Video 1">
+            <!-- <div class="overlay">Click Here</div> -->
+        </div>
+        <div class="card" data-video="vid.mp4">
+            <img src="laptop.webp" alt="Video 2">
+            <!-- <div class="overlay">Click Here</div> -->
+        </div>
+        <div class="card" data-video="Bag.mp4">
+            <img src="Bag1.webp" alt="Video 3">
+            <!-- <div class="overlay">Click Here</div> -->
+        </div>
+        <div class="card" data-video="Book.mp4">
+            <img src="book1.jpg" alt="Video 3">
+            <!-- <div class="overlay">Click Here</div> -->
+        </div>
+    </div>
+    <script src="object_detector.js"></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Get to Know Us</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Make Money with Us</h3>
+                    <ul>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Amazon Associates</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Amazon Payment Products</h3>
+                    <ul>
+                        <li><a href="#">Amazon Business Card</a></li>
+                        <li><a href="#">Shop with Points</a></li>
+                        <li><a href="#">Reload Your Balance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Let Us Help You</h3>
+                    <ul>
+                        <li><a href="#">Amazon and COVID-19</a></li>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Centre</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amazon Prime Video. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
