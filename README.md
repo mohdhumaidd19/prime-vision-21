@@ -16,7 +16,7 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 <img width="932" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/4a98496a-5d6c-4157-bbc6-722fcf136857">  
 
 
-3)
+3)View results on Amazon E-Commerse website.
 <img width="904" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/e398888c-23ee-405d-b8e6-9961c6c54f2f">
 
 # Install
