@@ -7,6 +7,10 @@
 
 This is a web interface to [YOLOv8 object detection neural network](https://ultralytics.com/yolov8) that allows to run object detection right in a web browser without any backend using [ONNX runtime](https://onnxruntime.ai/).
 
+#Screen Shots
+<img width="947" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/de8b479c-1b0f-44a3-b1f3-b08b67d0df8a">
+
+<img width="932" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/4a98496a-5d6c-4157-bbc6-722fcf136857">
 
 
 # Install
@@ -21,4 +25,5 @@ You need to run `index.html` using any local webserver, for example internal web
 the ONNX runtime library `ort-wasm-simd.wasm`, the model file `yolov8n.onnx` and the `sample.mp4` video file exist in the same folder with `index.html`.
 
 Using the interface, you can press "Play" button to start object detection on the sample video. 
+
 
