@@ -4,7 +4,7 @@
 
 **PPT Link**: https://1drv.ms/p/c/77f6ef183d598fba/EWDVVsYm4fxMuf2Hvao_tMsBbQZ9XpSwHogmom9IbwMAdg?e=vbr843
 
-
+**Demo Link**: https://youtu.be/xXsiuB_ggx0
 This is a web interface to [YOLOv8 object detection neural network](https://ultralytics.com/yolov8) that allows to run object detection right in a web browser without any backend using [ONNX runtime](https://onnxruntime.ai/).
 
 ## Prototype Images
