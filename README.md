@@ -1,4 +1,4 @@
-# YOLOv8 object detection in videos 
+# Visual AI and E-Commerce
 
 **PROTOTYPE LINK**: https://prime-vision-21.vercel.app/
 
