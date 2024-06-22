@@ -6,7 +6,7 @@ This is a source code for a ["How to detect objects in videos in a web browser u
 
 # Install
 
-Clone this repository: `git clone git@github.com:AndreyGermanov/yolov8_inference_video_javascript.git`
+Clone this repository: `git clone git@github.com/mohdhumaidd19/prime-vision-21.git`
 
 Download the last version of the "ort-wasm-simd.wasm" from here: https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort-wasm-simd.wasm to the root of the repository.
 
