@@ -36,9 +36,9 @@ the ONNX runtime library `ort-wasm-simd.wasm`, the model file `yolov8n.onnx` and
 
 Using the interface, you can press "Play" button to start object detection on the sample video. 
 
- ###  Usage
+#  How to Use
 
-1.  Upload a video using the "Upload Video" button.
-2.  Play the video to see real-time object detection.
-3.  Click on the highlighted objects to view related products on Amazon.
+1. **Upload a video**: Use the "Upload Video" button to upload your video.
+2.  **Play the video**: Watch the video to see real-time object detection in action.
+3.  **Interact with Objects**: Click on the highlighted objects to view related products on Amazon
 
