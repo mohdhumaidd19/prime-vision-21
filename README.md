@@ -21,7 +21,7 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 
 - **HTML/CSS**: Frontend interface for video upload, playback, and displaying detection results.
 - **JavaScript**: Handles video processing, object detection, and communication with the Web Worker.
-- **Yolov8**: Implemented for real-time object detection in user-uploaded video content.
+- **YOLOv8**: Implemented for real-time object detection in user-uploaded video content.
 
 # Install
 
@@ -36,4 +36,9 @@ the ONNX runtime library `ort-wasm-simd.wasm`, the model file `yolov8n.onnx` and
 
 Using the interface, you can press "Play" button to start object detection on the sample video. 
 
+ ###  Usage
+
+1.  Upload a video using the "Upload Video" button.
+2.  Play the video to see real-time object detection.
+3.  Click on the highlighted objects to view related products on Amazon.
 
