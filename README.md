@@ -12,6 +12,7 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 <img width="947" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/de8b479c-1b0f-44a3-b1f3-b08b67d0df8a">
 
 
+
 2)Click Play for object detection in video.
 <img width="932" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/4a98496a-5d6c-4157-bbc6-722fcf136857">  
 
