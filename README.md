@@ -1,4 +1,4 @@
-# YOLOv8 object detection in videos in a web browser
+# YOLOv8 object detection in videos 
 
 **PROTOTYPE LINK**: https://prime-vision-21.vercel.app/
 
