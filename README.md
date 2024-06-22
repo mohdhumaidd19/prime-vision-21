@@ -21,8 +21,7 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 
 - **HTML/CSS**: Frontend interface for video upload, playback, and displaying detection results.
 - **JavaScript**: Handles video processing, object detection, and communication with the Web Worker.
-- **Web Worker**: Offloads heavy computations to a separate thread to keep the UI responsive.
-- **ONNX Runtime for WebAssembly**: Runs the YOLOv8 model for object detection within the Web Worker.
+- **Yolov8**: Implemented for real-time object detection in user-uploaded video content.
 
 # Install
 
