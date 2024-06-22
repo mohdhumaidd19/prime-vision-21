@@ -10,7 +10,7 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 # Screen Shots
 1) Click to any video or upload any video you want.
 <img width="947" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/de8b479c-1b0f-44a3-b1f3-b08b67d0df8a">
-
+<br>
 
 
 2)Click Play for object detection in video.
