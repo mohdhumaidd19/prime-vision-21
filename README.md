@@ -17,6 +17,13 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 3)View results on Amazon E-Commerse website.
 <img width="904" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/e398888c-23ee-405d-b8e6-9961c6c54f2f">
 
+## Project Structure
+
+- **HTML/CSS**: Frontend interface for video upload, playback, and displaying detection results.
+- **JavaScript**: Handles video processing, object detection, and communication with the Web Worker.
+- **Web Worker**: Offloads heavy computations to a separate thread to keep the UI responsive.
+- **ONNX Runtime for WebAssembly**: Runs the YOLOv8 model for object detection within the Web Worker.
+
 # Install
 
 Clone this repository: `git clone https://github.com/mohdhumaidd19/prime-vision-21`
