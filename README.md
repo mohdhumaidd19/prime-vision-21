@@ -10,8 +10,10 @@ This is a web interface to [YOLOv8 object detection neural network](https://ultr
 # Screen Shots
 <img width="947" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/de8b479c-1b0f-44a3-b1f3-b08b67d0df8a">
 
+
 <img width="932" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/4a98496a-5d6c-4157-bbc6-722fcf136857">
 
+<img width="904" alt="image" src="https://github.com/mohdhumaidd19/prime-vision-21/assets/139005276/e398888c-23ee-405d-b8e6-9961c6c54f2f">
 
 # Install
 
